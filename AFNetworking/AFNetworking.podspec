@@ -1,56 +1,31 @@
 Pod::Spec.new do |s|
-  s.name     = 'AFNetworking'
-  s.version  = '4.0.1'
-  s.license  = 'MIT'
-  s.summary  = 'A delightful networking framework for Apple platforms.'
-  s.homepage     = 'https://github.com/zxjcoder/ThirdRepo'
-  s.social_media_url = 'https://twitter.com/AFNetworking'
-  s.authors  = { 'Mattt Thompson' => 'm@mattt.me' }
+  # 库的名称
+  s.name             = 'AFNetworking'
+  # 库的版本号，要和你仓库里代码对应的版本一致
+  s.version          = '4.0.1'
+  # 库的简要描述
+  s.summary          = 'A delightful networking library for iOS, macOS, watchOS, and tvOS.'
+  # 库的详细描述
+  s.description      = <<-DESC
+AFNetworking is a powerful networking library built on top of the Foundation URL Loading System. It extends the high - level networking abstractions in Cocoa with a modular architecture and feature - rich APIs.
+                       DESC
+  # 项目主页
+  s.homepage         = 'https://github.com/AFNetworking/AFNetworking'
+  # 许可证信息
+  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  # 作者信息
+  s.author           = { 'AFNetworking' => 'team@afnetworking.com' }
+  # 代码仓库地址
   s.source           = { :git => 'https://github.com/zxjcoder/ThirdRepo.git', :tag => s.version.to_s }
-
+  # 支持的平台及最低版本
   s.ios.deployment_target = '9.0'
   s.osx.deployment_target = '10.10'
   s.watchos.deployment_target = '2.0'
   s.tvos.deployment_target = '9.0'
 
-  s.ios.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER' => 'com.alamofire.AFNetworking' }
-  s.osx.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER' => 'com.alamofire.AFNetworking' }
-  s.watchos.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER' => 'com.alamofire.AFNetworking-watchOS' }
-  s.tvos.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER' => 'com.alamofire.AFNetworking' }
+  # 源文件路径
+  s.source_files = 'AFNetworking/**/*.{h,m}'
 
-  s.source_files = 'AFNetworking/AFNetworking.h'
-
-  s.subspec 'Serialization' do |ss|
-    ss.source_files = 'AFNetworking/AFURL{Request,Response}Serialization.{h,m}'
-  end
-
-  s.subspec 'Security' do |ss|
-    ss.source_files = 'AFNetworking/AFSecurityPolicy.{h,m}'
-  end
-
-  s.subspec 'Reachability' do |ss|
-    ss.ios.deployment_target = '9.0'
-    ss.osx.deployment_target = '10.10'
-    ss.tvos.deployment_target = '9.0'
-
-    ss.source_files = 'AFNetworking/AFNetworkReachabilityManager.{h,m}'
-  end
-
-  s.subspec 'NSURLSession' do |ss|
-    ss.dependency 'AFNetworking/Serialization'
-    ss.ios.dependency 'AFNetworking/Reachability'
-    ss.osx.dependency 'AFNetworking/Reachability'
-    ss.tvos.dependency 'AFNetworking/Reachability'
-    ss.dependency 'AFNetworking/Security'
-
-    ss.source_files = 'AFNetworking/AF{URL,HTTP}SessionManager.{h,m}', 'AFNetworking/AFCompatibilityMacros.h'
-  end
-
-  s.subspec 'UIKit' do |ss|
-    ss.ios.deployment_target = '9.0'
-    ss.tvos.deployment_target = '9.0'
-    ss.dependency 'AFNetworking/NSURLSession'
-
-    ss.source_files = 'UIKit+AFNetworking'
-  end
+  # 依赖的系统框架
+  s.framework = 'Foundation'
 end
