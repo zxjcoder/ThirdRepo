@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/zxjcoder/ThirdRepo/tree/main/AFNetworking'
   s.social_media_url = 'https://twitter.com/AFNetworking'
   s.authors  = { 'Mattt Thompson' => 'm@mattt.me' }
-  s.source   = { :git => 'git@github.com:zxjcoder/ThirdRepo.git', :tag => 'AFNetworking -4.0.1' }
+  s.source   = { :git => 'git@github.com:zxjcoder/ThirdRepo.git', :tag => 'AFNetworking-4.0.1' }
 
   s.ios.deployment_target = '9.0'
   s.osx.deployment_target = '10.10'
